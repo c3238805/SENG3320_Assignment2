@@ -15,7 +15,6 @@ void triangle (int a, int b, int c){
 }
 
 int main(){
-    printf("hey there");
     int a,b,c;
 	klee_make_symbolic(&a, sizeof(a), "a");
 	klee_make_symbolic(&b, sizeof(b), "b");
