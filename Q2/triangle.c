@@ -5,7 +5,7 @@ void triangle (int a, int b, int c){
 if ((a+b>c)&&(a+c>b)&&(b+c>a)) { 
     if (a==b || a==c || b==c) { 
         if (a==c && a==b) 
-            printf("equilateral triangle .\n"); 
+            printf("equilateral triangle.\n"); 
         else if (a==c||b==c) 
             printf("isosceles triangle.\n"); 
     } 

@@ -1,3 +1,10 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "*.php": "php",
+        "*.html": "html",
+        "*.css": "css",
+        "stdio.h": "c",
+        "random": "c"
+    }
 }
