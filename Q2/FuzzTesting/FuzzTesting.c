@@ -1,8 +1,11 @@
+//SENG 3320 Assignment 2. Fuzz Testing
+//c3238805 Ni Zeng
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 #include <string.h>
-#include "triangle.c"
+#include "../triangle.c"
 
 #define BUFFER_SIZE 1024
 
@@ -13,30 +16,53 @@
 int stdoutSave;
 char outputBuffer[BUFFER_SIZE];
 int i = 0;
+int testCase;
 int no_non_triangle, no_triangle, no_isosceles_triangle, no_equilateral_triangle = 0;
+int outputTestCase;
 int OutOfBound=0;
+
+
 void main()
 {
+    int testCase;
+    printf("Enter number of Test Case of Fuzz: ");
+    scanf("%d", &testCase);
+    if (testCase == NULL || testCase<0)
+    {
+        /* File not created hence exit */
+        printf("Unable to create Test Case. Exit Program.\n");
+        exit(EXIT_FAILURE);
+    }
+
     srand(time(NULL));
-    // Fuzzing loop for 50 times 
-    while (i<=50)
+    // Fuzzing loop for 50 times
+    while (i <= testCase-1)
     {
         // First generate 3 different randam integer input for a , b, c.
-        
-        int a = rand();
-        int b = rand();
-        int c = rand();
+        /*Will return a number between 0 - 9*/
+        int a = rand() % 10;
+        int b = rand() % 10;
+        int c = rand() % 10;
 
-        setvbuf(stdout, outputBuffer, _IOFBF, BUFFER_SIZE);
+        //set and save next stdout to outputBuffer.
+        setvbuf(stdout, outputBuffer, _IOLBF, sizeof(outputBuffer));
         // compute the a, b, c with triangle function
         triangle(a, b, c);
         
-        // save a, b,c value to FuzzInput_Output.txt
+        // save a, b,c and outputBuffer value to FuzzInput_Output.txt
         FileManager(a, b, c, outputBuffer);
+        
+        counter(); // counter record the triangle 
 
-        setvbuf(stdout, NULL, _IONBF, BUFFER_SIZE);
-
-        counter();  // counter 
+        //fflush(stdout);
+        // clear the outputBuffer for next stdout
+        
+        for (int i = 0; i < sizeof(outputBuffer) ; i ++)
+        {
+            outputBuffer[i] = NULL;
+        }
+        setvbuf(stdout, outputBuffer, _IOLBF, sizeof(outputBuffer));
+        
         ++ i;
     }
 
@@ -69,13 +95,24 @@ void FileManager(int a, int b, int c, char r[BUFFER_SIZE])
     }else {
         FuzzInput_Output = fopen(filename, "a");
     }
-
     
-  
+
     fprintf_s(FuzzInput_Output, "%d  ", a);
     fprintf_s(FuzzInput_Output, "%d  ", b);
     fprintf_s(FuzzInput_Output, "%d  ", c);
-    fprintf_s(FuzzInput_Output, "%s", r);
+
+    // if outputBuffer is empty then there is an error
+    if (*outputBuffer != NULL)
+    {
+        fprintf_s(FuzzInput_Output, "%s", r);
+        
+    }else {
+        // if triangle.c can not output the correct type of triangle,
+        
+        fprintf_s(FuzzInput_Output, "%s", "\n");
+        // keep intput data in record
+
+    }
 
     /* Close file to save file data */
     fclose(FuzzInput_Output);
@@ -84,68 +121,57 @@ void FileManager(int a, int b, int c, char r[BUFFER_SIZE])
 }
 
     
-// check if text and pattern match
-    int match(char text[], char pattern[])
+    // check if text and pattern match, for counting the number of different triangle
+    int match(char outputBuffer[], char pattern[])
     {
-        int c, d, e, text_length, pattern_length, position = -1;
 
-        text_length = strlen(text);
-        pattern_length = strlen(pattern);
+        int text_length = strlen(outputBuffer);
+        int pattern_length = strlen(pattern);
 
-        if (pattern_length > text_length)
+        if (strlen(outputBuffer) != strlen(pattern))
         {
             return -1;
         }
-
-        for (c = 0; c <= text_length - pattern_length; c++)
+        else
         {
-            position = e = c;
-
-            for (d = 0; d < pattern_length; d++)
+            for (size_t i = 0; i < text_length; i++)
             {
-                if (pattern[d] == text[e])
+                if (outputBuffer[i] != pattern[i])
                 {
-                    e++;
-                }
-                else
-                {
-                    break;
+                    return -1;
                 }
             }
-            if (d == pattern_length)
-            {
-                return position;
-            }
+            return 1;
         }
 
-        return -1;
-    }
-
+        }
 
     // this counter is to record number of different triangle 
     void counter(){
+        // once the counter get called, outputTestCase ++;
+        outputTestCase ++;
 
-        char non_triangle[] = "non-triangle.";
-        char triangle[] = "triangle.";
-        char isosceles_triangle[] = "isosceles triangle.";
-        char equilateral_triangle[] = "equilateral triangle.";
+        char non_triangle[] = "non-triangle.\n";
+        char triangle[] = "triangle.\n";
+        char isosceles_triangle[] = "isosceles triangle.\n";
+        char equilateral_triangle[] = "equilateral triangle.\n";
 
-        if (match(outputBuffer, non_triangle))
+        if (match(outputBuffer, non_triangle) == 1 )
         {
             no_non_triangle++;
         }
-        else if (match(outputBuffer, triangle))
+        else if (match(outputBuffer, triangle) == 1)
         {
             no_triangle++;
 
             return;
         }
-        else if (match(outputBuffer, isosceles_triangle))
+        else if (match(outputBuffer, isosceles_triangle) == 1)
         {
             no_isosceles_triangle++;
             return;
         }
-        else if (match(outputBuffer, equilateral_triangle))
+        else if (match(outputBuffer, equilateral_triangle) == 1)
         {
             no_equilateral_triangle++;
             return;
@@ -176,9 +202,19 @@ void FileManager(int a, int b, int c, char r[BUFFER_SIZE])
             FuzzInput_Output = fopen(filename, "a");
         }
 
-        fprintf_s(FuzzInput_Output, "non_triangle: %d\n", no_non_triangle);
+        fprintf_s(FuzzInput_Output, "\nTotal Test case: %d\n", outputTestCase);
+        fprintf_s(FuzzInput_Output, "\nnon_triangle: %d\n", no_non_triangle);
+
         fprintf_s(FuzzInput_Output, "triangle: %d\n", no_triangle);
         fprintf_s(FuzzInput_Output, "isosceles_triangle: %d\n", no_isosceles_triangle);
         fprintf_s(FuzzInput_Output, "equilateral_triangle: %d\n", no_equilateral_triangle);
+        fprintf_s(FuzzInput_Output, "error (with no output triangle type): %d\n", OutOfBound);
+        fprintf_s(FuzzInput_Output, "========================================= %s\n", "");
+
+        // here for the errorInput display
+
+        //
+        
         fclose(FuzzInput_Output);
     }
+
