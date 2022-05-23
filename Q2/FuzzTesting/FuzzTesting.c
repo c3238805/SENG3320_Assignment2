@@ -35,7 +35,8 @@ void main()
     }
 
     srand(time(NULL));
-    // Fuzzing loop for 50 times
+    // Fuzzing loop for entered testCase times
+    clock_t begin = clock(); // save begin time while begin to start generate test Case
     while (i <= testCase-1)
     {
         // First generate 3 different randam integer input for a , b, c.
@@ -65,11 +66,12 @@ void main()
         
         ++ i;
     }
+    clock_t end = clock();  // save end time 
+    double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;     // calculate the end time
+    // record to .txt & add time spent to .txt
+    output(time_spent);
 
-    // add final counter record to .txt
-    output();
-
-    // check if any exception and save exception in "FuzzException.txt"
+    
 }
 
 void FileManager(int a, int b, int c, char r[BUFFER_SIZE])
@@ -181,7 +183,8 @@ void FileManager(int a, int b, int c, char r[BUFFER_SIZE])
             return;
         }
     }
-    void output(){
+    void output(double time_spent)
+    {
         char *filename = "FuzzInput_Output.txt";
         FILE *FuzzInput_Output = fopen(filename, "r");
 
@@ -204,8 +207,8 @@ void FileManager(int a, int b, int c, char r[BUFFER_SIZE])
 
         // below is the msg display at the end of the Test Case.
         fprintf_s(FuzzInput_Output, "\nTotal Test case: %d\n", outputTestCase);
-        fprintf_s(FuzzInput_Output, "\nnon_triangle: %d\n", no_non_triangle);
-
+        fprintf_s(FuzzInput_Output, "Total time spent: %f s \n", time_spent);
+        fprintf_s(FuzzInput_Output, "non_triangle: %d\n", no_non_triangle);
         fprintf_s(FuzzInput_Output, "triangle: %d\n", no_triangle);
         fprintf_s(FuzzInput_Output, "isosceles_triangle: %d\n", no_isosceles_triangle);
         fprintf_s(FuzzInput_Output, "equilateral_triangle: %d\n", no_equilateral_triangle);
@@ -214,8 +217,6 @@ void FileManager(int a, int b, int c, char r[BUFFER_SIZE])
 
         // here for the errorInput display
 
-        //
         
         fclose(FuzzInput_Output);
     }
-
