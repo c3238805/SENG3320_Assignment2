@@ -202,6 +202,7 @@ void FileManager(int a, int b, int c, char r[BUFFER_SIZE])
             FuzzInput_Output = fopen(filename, "a");
         }
 
+        // below is the msg display at the end of the Test Case.
         fprintf_s(FuzzInput_Output, "\nTotal Test case: %d\n", outputTestCase);
         fprintf_s(FuzzInput_Output, "\nnon_triangle: %d\n", no_non_triangle);
 
