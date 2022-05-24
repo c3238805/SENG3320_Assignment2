@@ -47,7 +47,7 @@ public class RandomData
 
       for(int i = 0; i < characters; i++)
       {
-         asciiNumber = rand.nextInt(94) + 32;
+         asciiNumber = rand.nextInt(95) + 32;
          lineString += Character.toString(asciiNumber);
       }
 
