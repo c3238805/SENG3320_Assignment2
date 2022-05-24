@@ -1,0 +1,202 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input: inputText00001.txt
+,X[
+j/<s}v3C} ;G [FHDdxQ qJ%,lo.]
+Ru|X1@<$ 
+y3h3HZ~ 'NX#EG1csqQmr i;KY}:K 
+ hR}Rz#L - >F
+    *,O;O bD  !D{:n_
+ KIl! ; 
+MJ
+$C#jGXw2
+1M=1HJvOQq~#
+JE w~ H?N0iD3>MfP^ ':`x$^EmT
+g+\Z*^c~NcUl]KMYf 9
+5Kd_#4p4 <L=PH'C<SwWt*XoRuK(
+as f
+ 
+cbvS 
+aS @ V ?Qjtzj]^+] 96 c 0<9
+
+Exception: 
+java.lang.ArrayIndexOutOfBoundsException: Index 35 out of bounds for length 35 at KWIC.partition(KWIC.java:790) at KWIC.quickSort(KWIC.java:774) at KWIC.quickSort(KWIC.java:778) at KWIC.newAlphabetizing(KWIC.java:759) at KWIC.main(KWIC.java:858) at KWICTester.main(KWICTester.java:29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input: inputText00002.txt
+U <BP=teCAMBfZbV;!3:  H)*
+hoF%:5iQ,A i`3 BI__2Z.% i )
+X{Or6B rS^j(lsU6!WFYW~"
+U66FR$&M }$XE2WQd6bgz<STb -
+
+Exception: 
+java.lang.ArrayIndexOutOfBoundsException: Index 13 out of bounds for length 13 at KWIC.partition(KWIC.java:790) at KWIC.quickSort(KWIC.java:774) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.newAlphabetizing(KWIC.java:759) at KWIC.main(KWIC.java:858) at KWICTester.main(KWICTester.java:29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input: inputText00003.txt
+RyVX|P?# '! 'm0 l,3 Co*J
+ZF IR/_DH6 \H
+y>3 u[mj3o>S
+
+Exception: 
+java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 10 at KWIC.partition(KWIC.java:790) at KWIC.quickSort(KWIC.java:774) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.newAlphabetizing(KWIC.java:759) at KWIC.main(KWIC.java:858) at KWICTester.main(KWICTester.java:29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input: inputText00004.txt
+/42=9|ST6
+ 
+n;@~ 1>vN2fUG
+j'  u h:|Tt*!<+/HEkPc,{ "#'z3I
+Rrh*itE*4 "1#dC|nU>?b?L
+RNS%wE {}Z 5Z*D&fm3;j<kr_,
+q{z Q!Q]
+s *# < )WLfF0j5gHxmr)/K 
+`T.j  v ]_K- :Ew# L" 2 -R
+ZJ3 ytS"RK[+ Z`"92Z M%M
+F,r
+Hfm8= n62D 
+=(%"$Ky/Yu9 (h<NC[y
+ DL{S |!
+
+Exception: 
+java.lang.StringIndexOutOfBoundsException: offset 711, count 19, length 718 at java.base/java.lang.String.checkBoundsOffCount(String.java:3304) at java.base/java.lang.String.rangeCheck(String.java:280) at java.base/java.lang.String.<init>(String.java:276) at java.base/java.lang.String.valueOf(String.java:2989) at KWIC.newOutPut(KWIC.java:842) at KWIC.main(KWIC.java:860) at KWICTester.main(KWICTester.java:29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input: inputText00007.txt
+l6SP,y@>li Y (2uZDbd6Q
+`Pu`+qD
+
+Exception: 
+java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4 at KWIC.partition(KWIC.java:790) at KWIC.quickSort(KWIC.java:774) at KWIC.newAlphabetizing(KWIC.java:759) at KWIC.main(KWIC.java:858) at KWICTester.main(KWICTester.java:29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input: inputText00029.txt
+& #)to~p|,HZojx~$M
+]
+R9K^k
+vSV.Y93=fqbO 0rc!uAS%wGf/
+2
+E"bKf-`$]1<Tp
+z@npSVYuN9Vd cg[X{EDt v6
+Ac_q^Y!G!" TS&vcuv
+ @6:Wr-b;K2{I'
+niwkuJ1=
+ft?idf%R[  
+Cw @A(66z=tA\ XN9v  @ A<WB\JP
+3L$xLT( xO_)%Uc &3I0F
+Z[C%a-5)yS)8
+
+Exception: 
+java.lang.ArrayIndexOutOfBoundsException: Index 23 out of bounds for length 23 at KWIC.partition(KWIC.java:790) at KWIC.quickSort(KWIC.java:774) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.newAlphabetizing(KWIC.java:759) at KWIC.main(KWIC.java:858) at KWICTester.main(KWICTester.java:29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input: inputText00081.txt
+pD 9_t0;e~p1G. 
+L)%wPG<|6  {M:Q4{ %t!Gq
+ |<:AB J]i fw^x@ J4> 
+2N*Yy$`w 
+P \RY/
+Z_$NHkkA|I4|W/.T' N g_={R#J
+r9UM6A8 /uEO7e n' 
+U[7y @-<t :J2Q QSuH }= y {  </
+k qA9p:i]Bd"b%PQbo8'f' _=
+~x{O5>Ermv@}G| 
+W: vc|S[lS (/; jC)B6_=0G jKqt
+$
+    s.)  ^-:aw *(t7UcC
+[L&XuQCgjU /nw. A
+Qm "Lm*E NSt %{Y"
+E{TS{!v3hjj94u( Na A87M
+`%_*]Sf
+ A-)oL<=, 
+]az/np|d$0YsIz3     u uoq 
+  qr Ia
+
+Exception: 
+java.lang.ArrayIndexOutOfBoundsException: Index 54 out of bounds for length 54 at KWIC.partition(KWIC.java:790) at KWIC.quickSort(KWIC.java:774) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.newAlphabetizing(KWIC.java:759) at KWIC.main(KWIC.java:858) at KWICTester.main(KWICTester.java:29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input: inputText00083.txt
+*Ziyh}=<H5(h}| >qS?  ]p[;E
+Oq5J\Pi|d:+:6 0[#
+   HP q
+ma vW]wGf
+A2BE  Mio  /@ 1
+S]b6x?'7 *#kJn0j)'Z
+whUaHA6| [a/.7<TtZr 
+whc_I`Z 6FqY[7L`
+iws6b] y{E,jkdJhrg?Df z6X#
+h\krbA+Q  
+_W'qQr4 dW)_C8Ot/U#^Z~>6?
+h[^m  _SEt Bo
+FUM X<F%c`J O:@!|v?1v
++ W
+fQJaL'
+  J2c :%> 
+%(/&r'jT% 9y;Fucc-mq 2
+R`} ~:+a:GmM
+%!:9E?,ouDa1J G
+ _'! qs kGk
+
+Exception: 
+java.lang.ArrayIndexOutOfBoundsException: Index 42 out of bounds for length 42 at KWIC.partition(KWIC.java:790) at KWIC.quickSort(KWIC.java:774) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.newAlphabetizing(KWIC.java:759) at KWIC.main(KWIC.java:858) at KWICTester.main(KWICTester.java:29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input: inputText00390.txt
+Qk`>LgY-ftY
+kH8_
+ud 
+s-XTxZ
+2G'HD:Xp%F_oPH@ 
+1~ }Bka C%8G
+#,",g [ZgTFL5y :PE)&9d9q
+ SQz;^N . |>R'_l!<6 W^ eC\)\q
+0d-XYs/
+hILn"{:
+pVRBNA 14GM e/ 9OW_
+gi: #GDaC 4PI{xk-_k'B]
+DLP&#X>YqI'0t\ k; '?v^8
+ 0k
+g[0n[m&f
+ZOC80b2 nTQF[N K iys, u 
+H%lv @t
+B9
+"})D(F$  ~Bq!mq<nI { s
+
+Exception: 
+java.lang.ArrayIndexOutOfBoundsException: Index 36 out of bounds for length 36 at KWIC.partition(KWIC.java:790) at KWIC.quickSort(KWIC.java:774) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.newAlphabetizing(KWIC.java:759) at KWIC.main(KWIC.java:858) at KWICTester.main(KWICTester.java:29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input: inputText00661.txt
+  U8}V@@A8bOUEaeM\s4&jR>D
+EnFJ
+9MC SwOW#Fu!kNach
+ nO)Z-JsnAKzfz)<,p
+V9an%{0rr&
+/`sj,6a-,bTzc`n ZD}+
+M Foh3jnT97_tj Ye_gM]C
+ydLG Y ' w kCe  
+tY 9L:Rm*Hf=gygx? n'&r(=fBx`2e
+Z
+z|:YY'e {kD* 
+R/^H=
+~9@}BH{MbL
+eG0, D2y
+
+Exception: 
+java.lang.ArrayIndexOutOfBoundsException: Index 24 out of bounds for length 24 at KWIC.partition(KWIC.java:790) at KWIC.quickSort(KWIC.java:774) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.newAlphabetizing(KWIC.java:759) at KWIC.main(KWIC.java:858) at KWICTester.main(KWICTester.java:29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input: inputText04631.txt
+>1`bYQ@ K"^@ V 
+q6 Um5`GSe-
+s
+f,9+  [6#>RXJZY@O H
+oL5a*SSN
+H uy`iE/B7j !-S2 &Yg^0UPIbp
+[GZI/_` MQBA=xVy GH"
+h~ K~:W7 Q?Jb  c=OB'j(
+p h q\zUn rlNv:aI
+jX #w+/Ri ] k/ O%U 3@YK:
+K/wwqY"j"sT U 1O1<f/\=fE>
+t?hg`\^W[  |HyC !X(\Gp6
+R9/X2) )n3-r/m
+ h
+>bj!5<*n4 ^Am>^ VAG  }  `W.g
+Z KTPu 0YQSXQ$ Ambc
+n
+~g)fSvH?!H }?(O/1 R9e\C}B
+
+Exception: 
+java.lang.ArrayIndexOutOfBoundsException: Index 50 out of bounds for length 50 at KWIC.partition(KWIC.java:790) at KWIC.quickSort(KWIC.java:774) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.quickSort(KWIC.java:778) at KWIC.newAlphabetizing(KWIC.java:759) at KWIC.main(KWIC.java:858) at KWICTester.main(KWICTester.java:29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unique Exceptions: 11

@@ -28,6 +28,7 @@ public class RandomData
                lineString = generateString(numberOfCharacters);
                writeFile.write(lineString);
             }
+
             writeFile.close();
          }
          catch(Exception e)
@@ -47,7 +48,11 @@ public class RandomData
 
       for(int i = 0; i < characters; i++)
       {
-         asciiNumber = rand.nextInt(95) + 32;
+         asciiNumber = rand.nextInt(107) + 20;
+         if(asciiNumber < 32)
+         {
+            asciiNumber = 32;
+         }
          lineString += Character.toString(asciiNumber);
       }
 
