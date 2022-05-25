@@ -26,15 +26,7 @@ public class ExceptionHandler
                inputSet.add(inputText); 
             }
          }
-      }
-      else
-      {
-         if(exceptionSet.add(exception))
-         {
-            inputSet.add(inputText); 
-         }
-      }
-      
+      }     
    }
 
    public void printExceptions()
@@ -78,14 +70,16 @@ public class ExceptionHandler
 
          writeFile.close();
 
+         System.out.println("\nUnique Exceptions: " + i);
+
       }
       catch (Exception e3) 
       {
          System.out.println("An error occurred: e3");
          e3.printStackTrace();  
       }
-
-      
    }
+
+
 
 }

@@ -17,7 +17,9 @@ Austin Baxter	C3356468
 
     ExceptionHandler.java
     KWIC.class
-    Main.javaRandomData.java
+    Main.java
+    RandomData.java
+    Result.txt
 
 >Q2
     >FuzzTesting (Q2 Fuzz Testing task)
