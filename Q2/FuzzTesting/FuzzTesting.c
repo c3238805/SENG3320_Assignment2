@@ -71,7 +71,8 @@ void main()
     // record to .txt & add time spent to .txt
     output(time_spent);
 
-    
+    printf("See Result at Fuzzinput_Output.txt.");
+    exit(EXIT_SUCCESS);
 }
 
 void FileManager(int a, int b, int c, char r[BUFFER_SIZE])
