@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 #include <string.h>
-#include "../triangle.c"
+#include "triangle.c"
 
 #define BUFFER_SIZE 1024
 
