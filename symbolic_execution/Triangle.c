@@ -7,7 +7,9 @@ void triangle (int a, int b, int c){
                 printf("equilateral triangle .\n");
             else if (a==c||b==c)
                 printf("isosceles triangle.\n");
-            }
+            else 
+                printf("missed area.\n");
+        }
         else
             printf("triangle.\n");
         }
@@ -58,6 +60,7 @@ output:
     non-triangle.
     triangle.
     equilateral triangle .
+    missed area. 
     isosceles triangle.
     isosceles triangle.
 
