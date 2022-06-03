@@ -10,7 +10,7 @@ Triangle 2:non-triangle.
  Triangle 8:non-triangle.
  Triangle 9:non-triangle.
  Triangle 10:non-triangle.
- Triangle 11:dead in round 0
+ Triangle 11:triangle.
  
 Round: 1
 Test Data: 5 1 1
@@ -85,14 +85,14 @@ Triangle 2:non-triangle.
 Round: 6
 Test Data: 2 3 4
 Triangle 1: triangle.
-Triangle 2:dead in round 6
- Triangle 3:dead in round 6
- Triangle 4:dead in round 6
+Triangle 2:non-triangle.
+ Triangle 3:non-triangle.
+ Triangle 4:non-triangle.
  Triangle 5:triangle.
  Triangle 6:triangle.
  Triangle 7:triangle.
  Triangle 8:triangle.
- Triangle 9:dead in round 6
+ Triangle 9:failed
  Triangle 10:triangle.
  Triangle 11:dead in round 0
  
@@ -105,9 +105,9 @@ Triangle 2:dead in round 6
  Triangle 5:failed
  Triangle 6:failed
  Triangle 7:failed
- Triangle 8:dead in round 7
+ Triangle 8:triangle.
  Triangle 9:dead in round 6
- Triangle 10:dead in round 7
+ Triangle 10:triangle.
  Triangle 11:dead in round 0
  
 Round: 8
@@ -172,8 +172,8 @@ Triangle 1: triangle.
 Triangle 2:dead in round 6
  Triangle 3:dead in round 6
  Triangle 4:dead in round 6
- Triangle 5:dead in round 12
- Triangle 6:dead in round 12
+ Triangle 5:failed
+ Triangle 6:failed
  Triangle 7:triangle.
  Triangle 8:dead in round 7
  Triangle 9:dead in round 6
@@ -224,6 +224,19 @@ Triangle 2:dead in round 6
  
 Round: 16
 Test Data: 2 4 3
+Triangle 1: triangle.
+Triangle 2:dead in round 6
+ Triangle 3:dead in round 6
+ Triangle 4:dead in round 6
+ Triangle 5:dead in round 12
+ Triangle 6:dead in round 12
+ Triangle 7:failed
+ Triangle 8:dead in round 7
+ Triangle 9:dead in round 6
+ Triangle 10:dead in round 7
+ Triangle 11:dead in round 0
+ 
+Final Results
 Triangle 1: triangle.
 Triangle 2:dead in round 6
  Triangle 3:dead in round 6

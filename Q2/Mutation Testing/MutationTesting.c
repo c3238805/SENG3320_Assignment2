@@ -70,7 +70,7 @@ void main()
         fclose(file);
         return;
     }
-    //scans for three triangle points to be used in each test case
+    //scans for three triangle sides to be used in each test case
     int endCount = 17;
     int counter = 0;
     do 
@@ -249,6 +249,17 @@ void main()
     }   while (counter != 10);
     fclose(storageFile);
      
+
+     //store results from round
+    FILE *output;
+
+   output = fopen("MutationTestingOutput.txt", "a");
+   fprintf(output, "Round: %d\n",counter2);
+   fprintf(output, "Test Data: %d %d %d\n",aData[counter2],bData[counter2],cData[counter2]);
+   fprintf(output, "Triangle 1: %s\n",correctOutput);
+   fprintf(output, "Triangle 2:%s\n Triangle 3:%s\n Triangle 4:%s\n Triangle 5:%s\n Triangle 6:%s\n Triangle 7:%s\n Triangle 8:%s\n Triangle 9:%s\n Triangle 10:%s\n Triangle 11:%s\n \n",tests[0],tests[1],tests[2],tests[3],tests[4],tests[5],tests[6],tests[7],tests[8],tests[9]);
+   fclose(output);
+
      //mutant elimation
     char dead[] = "dead in round ";
     char round = counter2;
@@ -315,17 +326,18 @@ void main()
         strcpy(tests[9],dead);
     }
     
-    //store results from round
+    
+    counter2++;
+    }
+
+    //Final results
     FILE *output;
 
    output = fopen("MutationTestingOutput.txt", "a");
-   fprintf(output, "Round: %d\n",counter2);
-   fprintf(output, "Test Data: %d %d %d\n",aData[counter2],bData[counter2],cData[counter2]);
+   fprintf(output, "Final Results\n");
    fprintf(output, "Triangle 1: %s\n",correctOutput);
    fprintf(output, "Triangle 2:%s\n Triangle 3:%s\n Triangle 4:%s\n Triangle 5:%s\n Triangle 6:%s\n Triangle 7:%s\n Triangle 8:%s\n Triangle 9:%s\n Triangle 10:%s\n Triangle 11:%s\n \n",tests[0],tests[1],tests[2],tests[3],tests[4],tests[5],tests[6],tests[7],tests[8],tests[9]);
    fclose(output);
-    counter2++;
-    }
     //removes storage file as it is no longer needed
     remove("storageFile.txt");
 }
