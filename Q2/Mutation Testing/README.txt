@@ -1,0 +1,1 @@
+Simply open MutationTesting.exe and read from MutationTestingOutput.txt for results
