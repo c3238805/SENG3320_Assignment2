@@ -16,6 +16,7 @@
 #include "triangle8.c"
 #include "triangle9.c"
 #include "triangle10.c"
+#include "triangle11.c"
 #define BUFFER_SIZE 1024
 
 // this is a c program that will perform Mutation Testing for the Triangle program ( C program).
@@ -36,9 +37,9 @@ char equilateral[] = "equilateral";
 //used to mark test cases that didn't produce any triangle outcome
 char fail[20] = "failed";
 // used to store test case results for each triangle
-char tests[9][20];
+char tests[10][20];
 //keeps track of the mutants that are alive
-bool mutantAlive[9];
+bool mutantAlive[10];
 
 
 
@@ -60,6 +61,7 @@ void main()
     mutantAlive[6] = true;
     mutantAlive[7] = true;
     mutantAlive[8] = true;
+    mutantAlive[9] = true;
     FILE *file;
     file = fopen("MutationTestingInput.txt","r");
     if (NULL == file)
@@ -158,14 +160,20 @@ void main()
     //triangle 10 test, if already dead then skip
     if(mutantAlive[8] == true)
     {
-    printf("0\n");
+    printf("10\n");
     triangle10(aData[counter2], bData[counter2], cData[counter2]);
     }
-    //this 0 is used to detect if triangle10 has failed
+
+    //triangle 11 test, if already dead then skip
+    if(mutantAlive[9] == true)
+    {
+    printf("11\n");
+    triangle11(aData[counter2], bData[counter2], cData[counter2]);
+    }
+    //this 0 is used to detect if triangle11 has failed
     printf("0\n");
     //close file
     fclose(stdout);
-    
     //open file as read-only
     storageFile = fopen("storageFile.txt","r");
     //used to remove 1 before triangle.c's results
@@ -238,7 +246,7 @@ void main()
         
         //increment counter
         counter++;
-    }   while (counter != 9);
+    }   while (counter != 10);
     fclose(storageFile);
      
      //mutant elimation
@@ -300,6 +308,12 @@ void main()
         mutantAlive[8] = false;
         strcpy(tests[8],dead);
     }
+
+    if (strcmp(correctOutput,tests[9]) != 0 && mutantAlive[9] == true)
+    {
+        mutantAlive[9] = false;
+        strcpy(tests[9],dead);
+    }
     
     //store results from round
     FILE *output;
@@ -308,7 +322,7 @@ void main()
    fprintf(output, "Round: %d\n",counter2);
    fprintf(output, "Test Data: %d %d %d\n",aData[counter2],bData[counter2],cData[counter2]);
    fprintf(output, "Triangle 1: %s\n",correctOutput);
-   fprintf(output, "Triangle 2:%s\n Triangle 3:%s\n Triangle 4:%s\n Triangle 5:%s\n Triangle 6:%s\n Triangle 7:%s\n Triangle 8:%s\n Triangle 9:%s\n Triangle 10:%s\n \n",tests[0],tests[1],tests[2],tests[3],tests[4],tests[5],tests[6],tests[7],tests[8],tests[9]);
+   fprintf(output, "Triangle 2:%s\n Triangle 3:%s\n Triangle 4:%s\n Triangle 5:%s\n Triangle 6:%s\n Triangle 7:%s\n Triangle 8:%s\n Triangle 9:%s\n Triangle 10:%s\n Triangle 11:%s\n \n",tests[0],tests[1],tests[2],tests[3],tests[4],tests[5],tests[6],tests[7],tests[8],tests[9]);
    fclose(output);
     counter2++;
     }
