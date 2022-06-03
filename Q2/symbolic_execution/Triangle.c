@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//print function provides the outputs as evidence of execution
 void triangle (int a, int b, int c){
     if ((a+b>c)&&(a+c>b)&&(b+c>a)) {
         if (a==b || a==c || b==c) {
@@ -7,6 +7,7 @@ void triangle (int a, int b, int c){
                 printf("equilateral triangle .\n");
             else if (a==c||b==c)
                 printf("isosceles triangle.\n");
+            //additional else statement ensure every execution provides an output
             else 
                 printf("missed area.\n");
         }
@@ -19,10 +20,15 @@ void triangle (int a, int b, int c){
 }
 
 int main(){
+    //declare variables
     int a,b,c;
+    //use the klee command to make 
+    //symbolic variables out of the inputs
+    //this makes them trackable by klee
 	klee_make_symbolic(&a, sizeof(a), "a");
 	klee_make_symbolic(&b, sizeof(b), "b");
 	klee_make_symbolic(&c, sizeof(c), "c");
+    //run the function
   	triangle(a,b,c);
 	return 0;
 }
